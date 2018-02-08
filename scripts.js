@@ -1,4 +1,4 @@
-var colors = ['black', 'blue', 'red','gray' ];
+var colors = ['black', 'blue', 'red','green' ];
 // myDiv.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 $(document).ready(function () {
 
