@@ -1,11 +1,11 @@
-var colors = ['black', 'blue', 'red','white'];
+var colors = ['black', 'blue', 'red','gray' ];
 // myDiv.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 $(document).ready(function () {
 
     var n = prompt("enter the no. parking");
     for (i = 1; i <= n; i++) {
         $("table").append("<tr id='slot" + i + "''><td id='reg" + i + "''>empty</td><td id='colour" + i + "''>" +
-            "<button id='btn-col" + i + "'' type='button' class=' bt btn btn-danger'></button></td><td>" + i + "</td><td id='operation" + i + "''>" +
+            "<button id='btn-col" + i + "'' type='button' class=' bt btn btn-danger'><div class='col-name" + i + "'>red</div></button></td><td>" + i + "</td><td id='operation" + i + "''>" +
             "<button id='remove" + i + "' class='btn btn-danger btn-sm remove' name='" + i + "'>" +
             "<span class='glyphicon glyphicon'></span>remove</button></td></tr>"
         );
@@ -29,8 +29,9 @@ $(document).ready(function () {
                 $(".btn-col").css("background-color",col );
                 check = $("#reg" + i).html();
                 if (check == "empty") {
-                    $("#reg" + i).html("KA-"+st1+"-"+st2+"-"+st3+"  "+col);
+                    $("#reg" + i).html("KA-"+st1+"-"+st2+"-"+st3);
                     $("#btn-col" + i).css("background-color",col );
+                    $(".col-name" + i).html(col);
                     break;
 
                 }
@@ -49,9 +50,10 @@ $(document).ready(function () {
         for (i = 1; i <= n; i++) {
             check = $("#reg" + i).html();
             if (check == "empty") {
-                $("#reg" + i).html(registrationNo);
                 var col=colors[Math.floor(Math.random() * colors.length)];
                 $("#btn-col" + i).css("background-color",col );
+                $("#reg" + i).html(registrationNo );
+                $(".col-name" + i).html(col);
                 break;
 
             }
@@ -75,11 +77,29 @@ $(document).ready(function () {
         var remove = $(this).attr("name");
         $("#reg" + remove).html("empty");
         $("#btn-col" + remove).css("background-color","transparent" );
+        $("#col-name" + remove).html(null);
     });
 
     $("#startSearch").click(function () {
+        $("#displaysearch").html("");
         var colour = $("#searchByColour").val();
-        alert(colour);
+        for(i=1;i<=n;i++)
+        {
+            var getcolour=$(".col-name"+i).html();
+
+            if(colour == getcolour)
+            {
+
+                var getregistration = $("#reg"+i).html();
+
+                $("#displaysearch").append(getregistration+"<br>");
+
+
+            }
+
+
+        }
     });
+
 
 });
