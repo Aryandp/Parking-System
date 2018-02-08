@@ -24,9 +24,7 @@
             var check;
             var col=colors[Math.floor(Math.random() * colors.length)];
             for (i = 1; i <= n; i++) {
-                var st1=Math.floor(10 + (99 - 10) * Math.random());
-                var st2=Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 2).toUpperCase();
-                var st3=Math.floor(1000 + (9999 - 1000) * Math.random());
+
                 $(".btn-col").css("background-color",col );
                 check = $("#reg" + i).html();
                 if (check == "empty") {
