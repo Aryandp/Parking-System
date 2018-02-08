@@ -1,4 +1,4 @@
-var colors = ['black', 'white', 'blue', 'red'];
+var colors = ['black', 'blue', 'red','white'];
 // myDiv.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 $(document).ready(function () {
 
@@ -50,6 +50,8 @@ $(document).ready(function () {
             check = $("#reg" + i).html();
             if (check == "empty") {
                 $("#reg" + i).html(registrationNo);
+                var col=colors[Math.floor(Math.random() * colors.length)];
+                $("#btn-col" + i).css("background-color",col );
                 break;
 
             }
@@ -75,16 +77,9 @@ $(document).ready(function () {
         $("#btn-col" + remove).css("background-color","transparent" );
     });
 
-
-    $(document).ready(function(){
-        $('a[href="#search"]').on('click', function(event) {
-            $('#search').addClass('open');
-            $('#search > form > input[type="search"]').focus();
-        });
-        $('#search, #search button.close').on('click keyup', function(event) {
-            if (event.target == this || event.target.className == 'close' || event.keyCode == 27) {
-                $(this).removeClass('open');
-            }
-        });
+    $("#startSearch").click(function () {
+        var colour = $("#searchByColour").val();
+        alert(colour);
     });
+
 });
