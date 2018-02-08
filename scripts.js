@@ -86,20 +86,11 @@ $(document).ready(function () {
         for(i=1;i<=n;i++)
         {
             var getcolour=$(".col-name"+i).html();
-
             if(colour == getcolour)
             {
-
                 var getregistration = $("#reg"+i).html();
-
                 $("#displaysearch").append(getregistration+"<br>");
-
-
             }
-
-
         }
     });
-
-
 });
