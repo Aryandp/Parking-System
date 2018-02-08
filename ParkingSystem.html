@@ -30,19 +30,16 @@
         }
     </style>
 </head>
-
 <body>
 <div class="container-fluid" style="background-color: #eceeee; height: auto;">
     <div class="row">
-        <div class="align-center">
+        <div class="align-center" style="margin-top: 20px;">
             <h1>Parking Lot System</h1>
         </div>
-
     </div>
-    <div class="container">
-        <div class="col-sm-2"></div>
-        <div class="panel panel-default col-sm-8">
-
+    <div class="container-fluid" style="margin-top: 25px;">
+        <div class="col-sm-1"></div>
+        <div class="panel panel-default col-sm-6">
             <div class="panel-body">
                 <table class="table table-hover">
                     <thead>
@@ -52,17 +49,30 @@
                         <th>Parking Slot</th>
                         <th>Action</th>
                     </tr>
-
-
                     </thead>
-                    <tbody>
-
-                    </tbody>
+                    <tbody></tbody>
                 </table>
-
             </div>
         </div>
+        <div class="col-sm-1"></div>
+        <div class=" col-sm-3">
+            <span> <input type="text" class="form-control" id="registrationNo" placeholder="enter registration No."></span>
+            <form class="search" role="search">
+                <div class="form-group" style="margin-top: 25px;">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </form>
+
+        </div>
+        <div class="col-sm-1">
+            <button class="btn btn-default" id="allocateParkingSlot" >Allot Slot</button>
+
+            <button style="margin-top: 25px;" type="submit" class="btn btn-default">Submit</button>
+
+        </div>
+
     </div>
+        <!--
     <div class="col-sm-2"></div>
     <div class="row">
         <div class="col-sm-1"></div>
@@ -72,10 +82,8 @@
         <div class="col-sm-2">
             <button class="btn btn-default" id="allocateParkingSlot">Allot Slot</button>
         </div>
-
-    </div>
-
-
-</div>
+    </div> -->
+    <div class="container-fluid" style="height: 35px;"></div>
 </body>
+
 </html>
